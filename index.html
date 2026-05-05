@@ -415,7 +415,9 @@
         setTimeout(function(){
           var params=new URLSearchParams(window.location.search);
           params.set('name',userName);
-          window.location.href='https://oferta.primevitalabs.com?'+params.toString();
+          var p=new URLSearchParams(window.location.search);
+          var tid=p.get('tid')||'';
+          window.location.href='https://oferta.primevitalabs.com/?tid='+encodeURIComponent(tid)+'&affiliate=arkaff01&name='+encodeURIComponent(userName);
         },1200);
       }
     },300);
